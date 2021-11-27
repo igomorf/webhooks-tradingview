@@ -26,7 +26,10 @@ def main():
 #         return 'success', 200
 #     else:
 #         abort(400)
+#
+# if __name__  == '__main__':
+#     app.run(debug=True)
 
 if __name__  == '__main__':
-    app.run(debug=True)
+    main()
 

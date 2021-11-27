@@ -11,6 +11,10 @@ cors = CORS(app, resource={r"/*":{"origins": "*"}})
 def index():
     return "<h1>Olá Mundo!</h1>"
 
+@app.route("/webhook", methods=['GET'])
+def deploy():
+    return "<h1>Testando deploy do webhook!</h1>"
+
 def main():
     port = int(os.environ.get('PORT', 5000))
     app.run(host="0.0.0.0", port=port)

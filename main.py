@@ -1,17 +1,14 @@
 import os
 import json
-import sys
 import config
 from binance.client import Client
 from binance.enums import *
-from flask import Flask, request, abort, json
-from flask_cors import CORS
-
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
 client = Client(config.API_KEY, config.API_SECRET, tld='us')
-cors = CORS(app, resource={r"/*":{"origins": "*"}})
+
 
 def order(side, quantity, symbol,order_type=ORDER_TYPE_MARKET):
     try:
